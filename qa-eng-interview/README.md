@@ -21,9 +21,7 @@ You have one hour to complete this exercise on your own. When the hour is up, yo
 
 Each test file contains more detailed instructions.
 
-After you finish all three tests, please come back to this file. Imagine Wikipedia is a Ranger customer, and these tests are part of their end-to-end test suite. Write a technical message to Wikipedia describing the updates you made to `searchWikipedia.ts` and `wikipediaHomepageActions.ts`—specifically, what changed and why.
-
-> [Add message here explaining your updates to `searchWikipedia.ts` and `wikipediaHomepageActions.ts`]
+Make sure that the only files that you edit are `login.test.ts`, `searchWikipedia.ts`, and `wikipediaHomepageActions.ts`.
 
 ## Project Structure
 
