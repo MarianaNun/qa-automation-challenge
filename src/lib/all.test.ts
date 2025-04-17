@@ -7,7 +7,7 @@ test(
     { tag: '@id=67ddea97348cfb2bed994986' },
     async ({ page }) => {
         await searchWikipedia(page, {});
-    }
+    },
 );
 
 test(
@@ -15,5 +15,5 @@ test(
     { tag: '@id=67ddf04f348cfb2bed994999' },
     async ({ page }) => {
         await wikipediaHomepageActions(page, {});
-    }
+    },
 );

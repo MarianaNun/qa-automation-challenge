@@ -3,7 +3,9 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "test": "npx playwright test --config src/lib/playwright.config.ts"
+        "test": "npx playwright test --config src/lib/playwright.config.ts",
+        "format": "prettier --write \"src/**/*.{ts,tsx,js,json,md}\"",
+        "format:check": "prettier --check \"src/**/*.{ts,tsx,js,json,md}\""
     },
     "dependencies": {
         "@playwright/test": "^1.45.1",
@@ -20,6 +22,7 @@
         "node": ">=20.0.0"
     },
     "devDependencies": {
-        "@types/node": "^22.4.2"
+        "@types/node": "^22.4.2",
+        "prettier": "^3.5.3"
     }
 }
