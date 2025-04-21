@@ -19,7 +19,7 @@ export async function run(page: Page, params: {}) {
   const countLink = page.getByRole('link', { name: /^\d{1,3}(,\d{3})*$/ });
   const raw = await countLink.innerText();
 
-  // 3–5. open the Appearance dropdown
+  // 3–5.
 
 
   // Small
@@ -33,5 +33,5 @@ export async function run(page: Page, params: {}) {
 }
 
 test('Perform Wikipedia homepage actions and validate counts & text‑size', async ({ page }) => {
-  await run(page, {}); 
+  await run(page, {});
 });
