@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this exercise, you will use Playwright (written in TypeScript) to create and complete three automated tests for Wikipedia.
+In this exercise, you will use Playwright (written in TypeScript) to create and complete three tests for Wikipedia.
 
 You’ll start by implementing a login test from scratch, then finish two existing tests that were partially generated using Ranger’s test recorder and code generation tool.
 
