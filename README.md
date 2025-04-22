@@ -6,7 +6,7 @@ In this exercise, you will use Playwright (written in TypeScript) to create and 
 
 You’ll start by implementing a login test from scratch, then finish two existing tests that were partially generated using Ranger’s test recorder and code generation tool.
 
-You have one hour to complete this exercise. When the hour is up, your interviewer will rejoin the call to discuss your work. You’ll walk them through what you accomplished, highlight what went well, and note any improvements you would have made with additional time.
+You have one hour to complete this exercise. When the hour is up, you will be required to explain in short your solutions in less than 4 minutes, you’ll walk interviewers through what you accomplished, highlight what went well, and note any improvements you would have made with additional time.
 
 ## Your Task
 
