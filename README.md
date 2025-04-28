@@ -2,16 +2,16 @@
 
 ## Overview
 
-In this exercise, you will use Playwright (written in TypeScript) to create and complete three tests for Wikipedia.
+In this exercise, you will use Playwright (written in TypeScript) to correct 3 tests for Wikipedia that were written by an AI.
 
-You’ll start by implementing a login test from scratch, then finish two existing tests that were partially generated using Ranger’s test recorder and code generation tool.
+You’ll start by updating the login test, then finish the other 2 tests in the tests `tests` directory.
 
-You have one hour to complete this exercise. When the hour is up, you will be required to explain in short your solutions in less than 4 minutes, you’ll walk interviewers through what you accomplished, highlight what went well, and note any improvements you would have made with additional time.
+You have 1 hour to complete this exercise. When the hour is up, you will be required to explain in short your solutions in less than 4 minutes, you’ll walk interviewers through what you accomplished, highlight what went well, and note any improvements you would have made with additional time.
 
 ## Your Task
 
-1. **Implement a login test and capture the storage state so the remaining tests run as a logged-in user:**
-    - In `login.test.ts`, create a test that signs into Wikipedia.
+1. **Complete the login test and capture the storage state so the remaining tests run as a logged-in user:**
+    - In `login.test.ts`, correct the test that signs into Wikipedia.
     - Use the Wikipedia account credentials already provided in the `.env` file.
 
 2. **Complete the Wikipedia search test:**
