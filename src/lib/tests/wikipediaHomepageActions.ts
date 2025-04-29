@@ -12,26 +12,45 @@ test.use({ storageState: 'src/auth/login.json' });
  */
 
 export async function run(page: Page, params: {}) {
-  // 1
-  await page.goto('https://en.wikipedia.org/wiki/Main_Page');
+    // 1
+    await page.goto('https://en.wikipedia.org/wiki/Main_Page');
 
-  // 2.
-  const countLink = page.getByRole('link', { name: /^\d{1,3}(,\d{3})*$/ });
-  const raw = await countLink.innerText();
+    // 2.
+    const countLink = page
+        .getByRole('link', { name: /^\d{1,3}(,\d{3})*$/ })
+        .last();
+    const raw = await countLink.innerText();
+    await expect(Number(raw.replace(/,/g, ''))).toBeLessThan(7000000);
 
-  // 3–5.
+    // 3–5.
 
+    // Small
 
-  // Small
+    const smallSizeButton = page.getByRole('radio', { name: 'Small' });
+    await smallSizeButton.click();
+    const header = page.getByRole('heading').getByText('Welcome to ').first();
 
+    await expect(header).toHaveCSS('font-size', '22.68px');
 
-  // Large
+    // Large
 
+    const largeSizeButton = page.getByRole('radio', { name: 'Large' });
+    await largeSizeButton.click();
 
-  // Standard
+    await expect(header).toHaveCSS('font-size', '32.4px');
 
+    // Standard
+
+    const standardSizeButton = page
+        .getByRole('radio', { name: 'Standard' })
+        .first();
+    await standardSizeButton.click();
+
+    await expect(header).toHaveCSS('font-size', '25.92px');
 }
 
-test('Perform Wikipedia homepage actions and validate counts & text‑size', async ({ page }) => {
-  await run(page, {});
+test('Perform Wikipedia homepage actions and validate counts & text‑size', async ({
+    page,
+}) => {
+    await run(page, {});
 });

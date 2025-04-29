@@ -11,23 +11,40 @@ import { Page, expect } from '@playwright/test';
  */
 
 export async function run(page: Page, params: {}) {
-
-    const searchInput = page.getByRole('searchbox', { name: 'Search Wikipedia' });
-
     // 1
     await page.goto('https://www.wikipedia.org/');
 
     // 2
-    await searchInput.fill('artificial');
-        
-    // 3
-    const artificialIntelligenceLink = page.getByRole('link', {
-        name: 'Artificial intelligence',
+    const searchInput = page.getByRole('searchbox', {
+        name: 'Search Wikipedia',
     });
-    await artificialIntelligenceLink.click();;
+    await searchInput.fill('artificial');
 
-    // 4. 
+    // 3
+    const artificialIntelligenceLink = page
+        .getByRole('link')
+        .filter({ hasText: 'Artificial intelligence' })
+        .first();
+    await artificialIntelligenceLink.click();
+
+    // 4.
+
+    const header = page
+        .getByRole('heading')
+        .getByText('Artificial intelligence')
+        .first();
+
+    await expect(header).toBeVisible();
+
+    const viewHistoryButton = page.getByTitle(
+        'Past revisions of this page [alt-shift-h]',
+    );
+    await viewHistoryButton.click();
 
     // 5.
 
+    const lastUpdate = page.locator('[class*="contributions-list"] li').first();
+    await expect(
+        lastUpdate.getByTitle('User:ElegantEgotist (page does not exist)'),
+    ).toBeVisible();
 }
